@@ -1,0 +1,263 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css" >
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+     <!-- Google fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Oldenburg&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+     
+    
+  </head>
+  <body>
+    <!-- Header -->
+
+    <header class="header" id="home">
+      <nav class="navbar">
+        <div class="nav-elements">
+      
+          <div class="block1">
+            <a href="index.html"><p>Grip Internship #GRIPOCT23</p></a>
+          </div>
+          <div class="items">
+            <ul>
+              
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#table">Customers</a></li>
+              <li><a href="#footer">Contact</a></li>
+              
+
+            </ul>
+          </div>
+      
+        </div>
+      </nav>
+      <section class="customer">
+        <div class="mainBox">
+            <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_oo9n3jl8.json" background="transparent"  speed="1"  style="width: 300px; height: 250px; " loop autoplay></lottie-player>
+            <div class="buttons">
+                <a href="#" class="intro-btn" 
+                onMouseOver="this.style.backgroundColor='#0BDA51'"
+                onMouseOut="this.style.backgroundColor='transparent'" 
+                onclick="openPopup()">Transfer Money</a>
+                <a href="#" class="intro-btn" onclick="historyFun()">History of Transaction</a>
+            </div>
+        </div>
+
+        <!-- Modal Send Money -->
+
+          <div class="popup" id="popup">
+            <div>
+              <h2>Send Money</h2>
+              <form class="boxContainer" id="form">
+
+                <div class="inputBox">
+                    <input type="text" id="enterSName" class="" placeholder="Sender's Username" aria-label="Sender's Username" required>
+                    <div class="">
+                      <span class="" id="">@gmail.com</span>
+                    </div>
+                </div>
+                <div class="inputBox">
+                  <input type="text" id="enterRName" class="" placeholder="Reciever's Username" required>
+                  <div class="">
+                    <span class="" id="">@gmail.com</span>
+                  </div>
+                </div>
+                <div class="inputBox">
+                  <div class="">
+                    <span class="">₹</span>
+                  </div>
+                  <input type="text"  style="width:75% ;" id="enterAmount" class="" placeholder="Enter Amount" required>
+                  <div class="">
+                    <span class="input-group-text">.00</span>
+                  </div>
+                </div>
+                <div class="transactionButtons">
+                  <button type="button" onclick="closePopup()">Close</button>
+                  <button type="submit" class ="transact" onclick="transfer()" id="but">Transfer</button>
+                </div>
+              </form>
+              
+            </div>
+            
+            <div id="svg" class="svg hide">
+              <!-- <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_wkebwzpz.json" background="transparent"  speed="1"  style="width: 300px; height: 250px; " loop autoplay></lottie-player> -->
+            </div>
+          </div>
+     
+        <!-- ModalTransaction history -->
+
+          <div class="history" id="history">
+            <div class="historyHeader">
+              <h3>Trasaction History</h3>
+        
+            </div>
+            <div class="modalContent">
+              <ol id="transactionHistoryBody">
+
+              </ol>
+            </div>
+            
+            <div>
+
+            </div>
+            <div class="historyFooter">
+              <button type="button" onclick="closePopup()">Close</button>
+            </div>
+          </div>
+   
+
+    </section>
+  
+    </header>
+
+    <!-- Table -->
+
+    <div class="container" id="table">
+        <div class="tableBox" style="overflow-x:auto;">
+          <table class="table"  >
+            <!--  border="0" cellspacing="0" cellpadding="0" by using this we can remove the borders in table -->
+            <thead>
+              <tr>
+                <th scope="col">S.NO.</th>
+                <th scope="col">Name of the Customer</th>
+                <th scope="col">E-Mail ID</th>
+                <th scope="col">Balance Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+  
+              <tr>
+                <td scope="row">1</td>
+                <td>Ben</td>
+                <td>Ben@gmail.com</td>
+                <td>
+                  <p id="BenBankBalance">20000</p>
+                </td>
+              </tr>
+  
+  
+              <tr>
+                <td scope="row">2</td>
+                <td>Sam</td>
+                <td>Sam@gmail.com</td>
+                <td>
+                  <p id="SamBankBalance">23000</p>
+                </td>
+              </tr>
+  
+              <tr>
+                <td scope="row">3</td>
+                <td>Peter</td>
+                <td>Peter@gmail.com</td>
+                <td>
+                  <p id="PeterBankBalance">43000</p>
+                </td>
+              </tr>
+  
+              <tr>
+                <td scope="row">4</td>
+                <td>Jay</td>
+                <td>Jay@gmail.com</td>
+                <td>
+                  <p id="JayBankBalance">46000</p>
+                </td>
+              </tr>
+  
+              <tr>
+                <td scope="row">5</td>
+                <td>Jake</td>
+                <td>Jake@gmail.com</td>
+                <td>
+                  <p id="JakeBankBalance">44000</p>
+                </td>
+              </tr>
+  
+              <tr>
+                <td scope="row">6</td>
+                <td>Tim</td>
+                <td>Tim@gmail.com</td>
+                <td>
+                  <p id="TimBankBalance">33000</p>
+                </td>
+              </tr>
+  
+              <tr>
+                <td scope="row">7</td>
+                <td>Felix</td>
+                <td>Felix@gmail.com</td>
+                <td>
+                  <p id="FelixBankBalance">26000</p>
+                </td>
+              </tr>
+  
+              <tr>
+                <td scope="row">8</td>
+                <td>Monica</td>
+                <td>Monica@gmail.com</td>
+                <td>
+                  <p id="MonicaBankBalance">21000</p>
+                </td>
+              </tr>
+  
+  
+  
+              <tr>
+                <td scope="row">9</td>
+                <td>John</td>
+                <td>John@gmail.com</td>
+                <td>
+                  <p id="JohnBankBalance">28000</p>
+                </td>
+              </tr>
+  
+              <tr>
+                <td scope="row">10</td>
+                <td>Riki</td>
+                <td>Riki@gmail.com</td>
+                <td>
+                  <p id="RikiBankBalance">36000</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="tail">
+        <h2>Get me Through 👇🏽</h2>
+        <a target="_blank" class="github" href="https://github.com/nikhleshpatel7734"><i class="social-icon fab fa-github fa-2x"></i></a>
+        <a target="_blank" class="linkedin" href="https://www.linkedin.com/in/nikhlesh-b45510278?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="social-icon fab fa-linkedin fa-2x"></i></a>
+        <a target="_blank" class="email" href="prnp9694@gmail.com"><i class="social-icon far fa-envelope fa-2x"></i></a>
+        <p> © NIKHLESH PATIDAR</p>
+      </div>
+    </footer>
+
+       <!-- JavaScript  -->
+    
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.9.6/lottie.min.js" integrity="sha512-yAr4fN9WZH6hESbOwoFZGtSgOP+LSZbs/JeoDr02pOX4yUFfI++qC9YwIQXIGffhnzliykJtdWTV/v3PxSz8aw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+       <script src="index.js"></script>
+   
+       <!-- Font Awesome -->
+       <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js" charset="utf-8"></script>
+ 
+
+   
+    
+  </body>
+</html>
